@@ -1,0 +1,24 @@
+<head>
+    <link rel="stylesheet" href="{{ STATIC_URL }}/static/CSS/archive.css">
+    <title>Articles' archive</title>
+</head>
+<body>
+    <div class="header">
+        <img src="static/Canada_Parks_Lake_Mountains_Forests_Scenery_Rocky_567540_2560x1600.jpg"  width="40" height="30"/>
+    </div>
+    <div class="archive">
+        {% for post in posts %}
+            <div class="one-post">
+                <h2 class="post-title">
+                    <a class="post-title" href="/article/{{ post.id }}">{{ post.title }}</a>
+                </h2>
+                <div class="article-info">
+                    <div class="article-author">{{ post.author.username }}</div>
+                    <div class="article-created-date">{{ post.created_date }}</div>
+                </div>
+                <p class="article-text">{{ post.get_excerpt }}</p>
+            </div>
+        {% endfor %}
+    </div>
+ </body>
+    

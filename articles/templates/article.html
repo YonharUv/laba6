@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}/static/CSS/article.css">
+</head>
+<body>
+    <div align="center">
+        <h1>{{ post.title }}</h1>
+    </div>
+    <div align="right" class="reference">
+        <a href="/">
+            <h2>Все статьи</h2>
+        </a>
+    </div>
+    <p class="article">{{ post.get_article }}</p>
+</body>
+</html>
