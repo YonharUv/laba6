@@ -3,9 +3,29 @@
     <title>Articles' archive</title>
 </head>
 <body>
+    {% if user.is_authenticated %}
+        <p> Hello, {{ user.username }}! </p>
+    {% endif %}
     <div class="header">
         <img src="static/Canada_Parks_Lake_Mountains_Forests_Scenery_Rocky_567540_2560x1600.jpg"  width="40" height="30"/>
     </div>
+    {% if not user.is_authenticated %}
+    <div align="right" class="reference">
+        <a href="/add_user">
+            <h2>Регистрация</h2>
+        </a>
+        <a href="/login">
+            <h2>Вход</h2>
+        </a>
+    </div>
+    {% endif %}
+    {% if user.is_authenticated %}
+    <div align="right" class="reference">
+        <a href="/logout">
+            <h2>Выход</h2>
+        </a>
+    </div>
+    {% endif %}
     <div class="archive">
         {% for post in posts %}
             <div class="one-post">

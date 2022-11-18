@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ STATIC_URL }}/static/css/add_user.css">
+    <meta charset="UTF-8">
+    <title>Вход</title>
+</head>
+<body>
+    <div id="container_demo" >
+    <div id="wrapper">
+        <div id="login" class="animate form">
+            <form action="{% url 'login'%}" method="POST">
+                {% csrf_token %}
+                <h1>Log in</h1>
+                 <p>{{ form.errors }}</p>
+                <p>
+                    <label for="usr" class="uname" data-icon="u" > Your email or username </label>
+                    <input id="usr" name="usr" required="required" type="text" placeholder="Логин"/>
+                </p>
+                <p>
+                    <label for="passwd" class="youpasswd" data-icon="p"> Your password </label>
+                    <input id="passwd" name="passwd" required="required" type="passwd" placeholder="Пароль" />
+                </p>
+                <p class="login button">
+                    <input type="submit" value="Login" />
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+    <p class="error"> {{ form.error }} </p>
+</body>
+</html>

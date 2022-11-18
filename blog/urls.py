@@ -19,6 +19,10 @@ from articles import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.archive),
-    path('article/<int:article_id>', views.get_article, name='get_article')
+    path('', views.archive, name='archive'),
+    path('article/<int:article_id>', views.get_article, name='get_article'),
+    path('article/new/', views.create_post, name='create_post'),
+    path('add_user/', views.add_user, name='add_user'),
+    path('login/', views.login_user, name='login'),
+    path('logout/', views.logout_user , name='logout'),
 ]
